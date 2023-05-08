@@ -75,7 +75,7 @@ function AuthForm() {
           />
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
-              {variant === "LOGIN" ? "Sign in" : "Register"}
+              {variant === "LOGIN" ? "Sign in" : "Registers"}
             </Button>
           </div>
         </form>
