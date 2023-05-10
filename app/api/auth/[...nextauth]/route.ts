@@ -39,11 +39,11 @@ export const authOptions: AuthOptions = {
         if (!credentials?.email || !credentials?.password)
           throw new Error("Invalid Credentials");
 
-          const user = await prisma.user.findUnique({
-            where: {
-              email: credentials.email,
-            },
-          });
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email,
+          },
+        });
 
         //esta parte de !user?.hashedPassword es para comprobar que el usuario exista su password hasheado, esto es debido porque puede ser que se haya registrado con github o google
         if (!user || !user?.hashedPassword)
@@ -64,7 +64,7 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_URL,
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 //esto es para las versiones de next auth donde no se usa al app router
