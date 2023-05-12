@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (isGroup) {
       const newConversation = await prisma.conversation.create({
         data: {
-          name,
+          name,//name es para el nombre del grupo
           isGroup,
           users: {
             connect: [
