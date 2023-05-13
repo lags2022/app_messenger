@@ -7,7 +7,7 @@ import { HiPhoto, HiPaperAirplane } from "react-icons/hi2";
 import MessageInput from "./MessageInput";
 
 function Form() {
-  const conversationId = useConversation();
+  const { conversationId } = useConversation();
 
   const {
     register,
@@ -18,6 +18,7 @@ function Form() {
 
   const submit: SubmitHandler<FieldValues> = (data) => {
     setValue("message", "", { shouldValidate: true });
+    console.log(data, "fuck");
 
     axios.post("/api/messages", {
       ...data,
